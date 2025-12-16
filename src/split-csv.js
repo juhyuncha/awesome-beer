@@ -22,7 +22,9 @@ try {
   const breweries = results.data;
   for (let brewery of breweries) {
     let { sidoNm } = brewery;
-    if (sidoNm === undefined) continue;
+    // Skip entries without a valid region name
+    if (sidoNm === undefined || !sidoNm || sidoNm.trim() === '') continue;
+    
     let sidoNmPath = `./data/${sidoNm}.md`;
     let data = `#### [${brewery.name}](${brewery.naverUrl}) \n`;
     data += ` - Address (주소): ${brewery.address}\n`;
@@ -45,7 +47,7 @@ try {
   }
 
   console.log("👍 데이터 분할 완료! (Data splitting complete!)");
-  console.log("총 (Total) " + breweries.length + " 개의 데이터를 분할했습니다. (data entries split)");
+  console.log("총 (Total) " + breweries.filter(b => b.sidoNm && b.sidoNm.trim()).length + " 개의 데이터를 분할했습니다. (data entries split)");
 } catch (e) {
   console.log("❌ 데이터 분할 실패! (Data splitting failed!)");
   console.log(e);
