@@ -11,6 +11,11 @@ function getKakaoMapsLink(lat, lng) {
   return `https://map.kakao.com/link/map/${lat},${lng}`;
 }
 
+// Function to check if coordinates are valid
+function hasValidCoordinates(y, x) {
+  return y && x;
+}
+
 try {
   const dataStream = fs.readFileSync("beer.csv", { encoding: "utf-8" });
   const results = Papa.parse(dataStream, { header: true });
@@ -23,8 +28,8 @@ try {
       sidoNm: brewery.sidoNm,
       name: brewery.name,
       naverUrl: brewery.naverUrl,
-      googleMapsUrl: brewery.y && brewery.x ? getGoogleMapsLink(brewery.y, brewery.x) : "",
-      kakaoMapsUrl: brewery.y && brewery.x ? getKakaoMapsLink(brewery.y, brewery.x) : "",
+      googleMapsUrl: hasValidCoordinates(brewery.y, brewery.x) ? getGoogleMapsLink(brewery.y, brewery.x) : "",
+      kakaoMapsUrl: hasValidCoordinates(brewery.y, brewery.x) ? getKakaoMapsLink(brewery.y, brewery.x) : "",
       address: brewery.address,
       beerType: brewery.beerType,
       desc: brewery.desc || null,

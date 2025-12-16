@@ -13,6 +13,11 @@ function getKakaoMapsLink(lat, lng) {
   return `https://map.kakao.com/link/map/${lat},${lng}`;
 }
 
+// Function to check if coordinates are valid
+function hasValidCoordinates(y, x) {
+  return y && x;
+}
+
 try {
   const results = Papa.parse(dataStream, { header: true });
 
@@ -20,11 +25,14 @@ try {
   console.log("✂️ 데이터 분할중 (Splitting data)... ");
 
   const breweries = results.data;
+  let validCount = 0;
+  
   for (let brewery of breweries) {
     let { sidoNm } = brewery;
     // Skip entries without a valid region name
-    if (sidoNm === undefined || !sidoNm || sidoNm.trim() === '') continue;
+    if (!sidoNm || sidoNm.trim() === '') continue;
     
+    validCount++;
     let sidoNmPath = `./data/${sidoNm}.md`;
     let data = `#### [${brewery.name}](${brewery.naverUrl}) \n`;
     data += ` - Address (주소): ${brewery.address}\n`;
@@ -32,7 +40,7 @@ try {
     data += ` - Features (특징): ${brewery.desc}\n`;
     
     // Add map links
-    if (brewery.y && brewery.x) {
+    if (hasValidCoordinates(brewery.y, brewery.x)) {
       data += `- Maps (지도):\n`;
       data += `  - [Naver Map (네이버 지도)](${brewery.naverUrl})\n`;
       data += `  - [Google Maps (구글 지도)](${getGoogleMapsLink(brewery.y, brewery.x)})\n`;
@@ -47,7 +55,7 @@ try {
   }
 
   console.log("👍 데이터 분할 완료! (Data splitting complete!)");
-  console.log("총 (Total) " + breweries.filter(b => b.sidoNm && b.sidoNm.trim()).length + " 개의 데이터를 분할했습니다. (data entries split)");
+  console.log("총 (Total) " + validCount + " 개의 데이터를 분할했습니다. (data entries split)");
 } catch (e) {
   console.log("❌ 데이터 분할 실패! (Data splitting failed!)");
   console.log(e);
