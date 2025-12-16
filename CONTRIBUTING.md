@@ -44,12 +44,15 @@
 After entering data in CSV, please run the following command:  
 (CSV에 데이터를 입력하면, 아래와 같은 명령어를 입력해주세요.)
 
-```
-npm run split-csv
+```bash
+npm run build
+# or run individually:
+# npm run split-csv  # Generates markdown files
+# npm run update-json  # Updates JSON file
 ```
 
-Running the above command will split the data by region.  
-(위 명령어를 입력 하면, 시도별로 데이터를 분할합니다.)
+Running the above command will split the data by region and update the JSON file.  
+(위 명령어를 입력 하면, 시도별로 데이터를 분할하고 JSON 파일을 업데이트합니다.)
 
 Thank you for contributing.  
 (기여해주셔서 감사합니다.)
