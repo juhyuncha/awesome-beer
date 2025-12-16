@@ -30,7 +30,7 @@ try {
   for (let brewery of breweries) {
     let { sidoNm } = brewery;
     // Skip entries without a valid region name
-    if (!sidoNm || sidoNm.trim() === '') continue;
+    if (!sidoNm?.trim()) continue;
     
     validCount++;
     let sidoNmPath = `./data/${sidoNm}.md`;

@@ -24,19 +24,22 @@ try {
   
   const breweries = results.data
     .filter(brewery => brewery.sidoNm !== undefined && brewery.sidoNm !== "")
-    .map(brewery => ({
-      sidoNm: brewery.sidoNm,
-      name: brewery.name,
-      naverUrl: brewery.naverUrl,
-      googleMapsUrl: hasValidCoordinates(brewery.y, brewery.x) ? getGoogleMapsLink(brewery.y, brewery.x) : "",
-      kakaoMapsUrl: hasValidCoordinates(brewery.y, brewery.x) ? getKakaoMapsLink(brewery.y, brewery.x) : "",
-      address: brewery.address,
-      beerType: brewery.beerType,
-      desc: brewery.desc || null,
-      homepage: brewery.homepage,
-      x: brewery.x,
-      y: brewery.y
-    }));
+    .map(brewery => {
+      const hasCoords = hasValidCoordinates(brewery.y, brewery.x);
+      return {
+        sidoNm: brewery.sidoNm,
+        name: brewery.name,
+        naverUrl: brewery.naverUrl,
+        googleMapsUrl: hasCoords ? getGoogleMapsLink(brewery.y, brewery.x) : "",
+        kakaoMapsUrl: hasCoords ? getKakaoMapsLink(brewery.y, brewery.x) : "",
+        address: brewery.address,
+        beerType: brewery.beerType,
+        desc: brewery.desc || null,
+        homepage: brewery.homepage,
+        x: brewery.x,
+        y: brewery.y
+      };
+    });
   
   fs.writeFileSync("beer.json", JSON.stringify(breweries, null, 2), { encoding: "utf-8" });
   
