@@ -55,6 +55,7 @@ Although not recorded in `.md` files, `x, y` coordinates are also provided.
 [sideseal](https://github.com/sideseal) <br>
 [Doker](https://github.com/tenn6871) <br>
 [pakddo](https://github.com/pakddo) <br>
+[mahi97](https://github.com/mahi97) <br>
 
 This project was inspired by [OpenBrewerydb](https://github.com/openbrewerydb/openbrewerydb).  
 (본 프로젝트는 [OpenBrewerydb](https://github.com/openbrewerydb/openbrewerydb) 를 참고하였습니다.)
