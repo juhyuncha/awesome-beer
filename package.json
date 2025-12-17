@@ -5,7 +5,9 @@
   "repository": "https://github.com/Resten1497/awesome-beer.git",
   "author": "Resten1497",
   "scripts": {
-    "split-csv": "node src/split-csv.js"
+    "split-csv": "node src/split-csv.js",
+    "update-json": "node src/update-json.js",
+    "build": "npm run split-csv && npm run update-json"
   },
   "license": "THE BEER-WARE LICENSE",
   "dependencies": {
