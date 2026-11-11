@@ -1,6 +1,6 @@
 """beer.csv에서 beer.json과 data/<시도>.md를 만든다.
 
-기존 Node 스크립트(src/split-csv.js, src/update-json.js)와 같은 출력을 낸다.
+beer.json에는 모든 가게를 넣고, data/*.md에는 폐업한 곳을 뺀다.
 표준 라이브러리만 쓰므로 Python 3.9 이상이면 바로 돌아간다.
 
     python scripts/build.py              # 저장소 루트에 생성
@@ -36,6 +36,8 @@ def to_md(r):
     s += f" - Address (주소): {r['address']}\n"
     s += f"- Type (종류): {r['beerType']}\n"
     s += f" - Features (특징): {r['desc']}\n"
+    s += f"- Status (상태): {r['status']}"
+    s += f" (확인일 {r['last_verified']})\n" if r["last_verified"] else "\n"
     if r["y"] and r["x"]:
         s += "- Maps (지도):\n"
         s += f"  - [Naver Map (네이버 지도)]({r['naverUrl']})\n"
@@ -60,6 +62,8 @@ def to_json(r):
         "homepage": r["homepage"],
         "x": r["x"],
         "y": r["y"],
+        "status": r["status"],
+        "lastVerified": r["last_verified"] or None,
     }
 
 
@@ -77,6 +81,8 @@ def main():
 
     by_sido = {}
     for r in rows:
+        if r["status"] == "폐업":
+            continue
         by_sido.setdefault(r["sidoNm"], []).append(to_md(r))
     for sido, parts in by_sido.items():
         (data_dir / f"{sido}.md").write_text("".join(parts), encoding="utf-8", newline="")
@@ -86,7 +92,8 @@ def main():
         encoding="utf-8",
         newline="",
     )
-    print(f"{len(rows)}곳, 시도 {len(by_sido)}개 파일 생성")
+    shown = sum(len(v) for v in by_sido.values())
+    print(f"{len(rows)}곳(md에는 폐업 제외 {shown}곳), 시도 {len(by_sido)}개 파일 생성")
 
 
 if __name__ == "__main__":

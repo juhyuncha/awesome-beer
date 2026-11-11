@@ -6,12 +6,14 @@ import csv
 import re
 import sys
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parent.parent
 
-HEADER = ["sidoNm", "name", "address", "beerType", "desc", "naverUrl", "homepage", "x", "y"]
+HEADER = ["sidoNm", "name", "address", "beerType", "desc", "naverUrl", "homepage", "x", "y", "status", "last_verified"]
+STATUS = {"영업", "폐업", "미확인"}
 TYPES = {"탭룸", "브루펍", "바틀샵", "기타"}
 # 시도명 → 주소 첫 단어로 허용하는 값
 SIDO = {
@@ -52,6 +54,16 @@ def main():
                 errs.append(f"{tag}: 좌표가 한국 범위 밖이거나 x(경도)·y(위도)가 바뀜 ({x}, {y})")
         except ValueError:
             errs.append(f"{tag}: 좌표가 숫자가 아님")
+        if r["status"] not in STATUS:
+            errs.append(f"{tag}: 상태 {r['status']!r}는 {sorted(STATUS)} 중 하나여야 함")
+        if r["last_verified"]:  # 비워도 됨
+            try:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["last_verified"]):
+                    raise ValueError
+                if date.fromisoformat(r["last_verified"]) > date.today():
+                    errs.append(f"{tag}: 확인일 {r['last_verified']!r}이 미래 날짜")
+            except ValueError:
+                errs.append(f"{tag}: 확인일 {r['last_verified']!r}은 YYYY-MM-DD 형식이어야 함")
 
     for key in ("name", "naverUrl"):
         c = Counter(r[key] for r in rows if r[key])
