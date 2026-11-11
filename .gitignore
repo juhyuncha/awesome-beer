@@ -3,3 +3,4 @@ yarn.lock
 .idea
 .DS_Store
 package-lock.json
+__pycache__/
