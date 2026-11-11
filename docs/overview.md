@@ -18,6 +18,8 @@
 | naverUrl | 네이버 지도 장소 URL(`map.naver.com/v5/entry/place/<id>` 또는 `naver.me` 단축) |
 | homepage | 홈페이지. 가능하면 인스타그램 |
 | x, y | 경도, 위도 |
+| status | 영업 / 폐업 / 미확인. 폐업한 곳도 지우지 않고 `폐업`으로 둔다(`data/*.md`에서는 빠지고 `beer.json`에는 남는다) |
+| last_verified | 사람이 마지막으로 재확인한 날(YYYY-MM-DD). 확인 전이면 비운다 |
 
 ## 용어
 - **탭룸:** 양조하지 않고 맥주를 파는 곳

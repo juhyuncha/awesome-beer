@@ -13,9 +13,14 @@
   (`beer.csv` 파일의 마지막 줄에 아래와 같은 규격으로 데이터를 추가해주세요.)
 
 ```
-[시도명],[가게명],[네이버지도url],[도로명주소],[맥주집 종류],[설명],[홈페이지],[위도],[경도]
-[Region],[Store Name],[Naver Map URL],[Street Address],[Beer Place Type],[Description],[Homepage],[Latitude],[Longitude]
+[시도명],[가게명],[도로명주소],[맥주집 종류],[설명],[네이버지도url],[홈페이지],[경도],[위도],[상태],[확인일]
+[Region],[Store Name],[Street Address],[Beer Place Type],[Description],[Naver Map URL],[Homepage],[Longitude],[Latitude],[Status],[Last Verified]
 ```
+
+- Status is one of 영업 (open), 폐업 (closed), 미확인 (unverified). Do not delete closed places; mark them 폐업.  
+  (상태는 영업, 폐업, 미확인 중 하나입니다. 폐업한 곳은 지우지 말고 폐업으로 표시해주세요.)
+- Last Verified is the date you checked the place yourself, in YYYY-MM-DD. Leave it empty if you have not checked.  
+  (확인일은 직접 영업 여부를 확인한 날짜를 YYYY-MM-DD로 적습니다. 확인하지 않았으면 비워둡니다.)
 
 ## Input Format (입력 양식)
 
