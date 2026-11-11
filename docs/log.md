@@ -14,3 +14,6 @@
   - 플레이그라운드 네이버 URL 끝의 `?`를 지웠다
 - **정정:** mahi97 변경을 받으려고 `upstream`·`mahi97` 원격을 추가했다가 지웠다. 개인 git 규칙이 juhyuncha 저장소 외의 원격 추가를 금지한다.
 - **결정:** 이 저장소는 개인 git 규칙("juhyuncha 계정의 private 저장소만 쓴다")의 예외로 공개 상태를 유지한다. 공개 저장소의 포크는 GitHub에서 비공개로 바꿀 수 없고, 남과 공유하는 목록이라 공개가 맞다. 근거: 사용자 답 "3개로 커밋하고 이 저장소만 공개 예외로 둔다."
+- **외부 반영:** `cleanup/data-2026` 브랜치(커밋 ae9309a, d61cf41, 0192fba 포함, master보다 12커밋 앞섬)를 origin에 push했다. master는 그대로다. 근거: 사용자 답 "push"
+- **외부 반영:** 포크 안에서 PR [juhyuncha/awesome-beer#1](https://github.com/juhyuncha/awesome-beer/pull/1)(`cleanup/data-2026` → `master`)을 만들었다. 원본 저장소에는 보내지 않았다. 근거: 사용자 답 "PR 만들기"
+- **외부 반영:** PR #1을 merge commit 방식으로 master에 병합했다(병합 커밋 9c75d4d, mahi97 커밋 이력 보존). 근거: 사용자 답 "병합"
