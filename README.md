@@ -5,6 +5,9 @@
 
 ## Overview (개요)
 
+> This fork revives [resten1497/awesome-beer](https://github.com/resten1497/awesome-beer) (last updated 2022-10) and [mahi97's English translation](https://github.com/mahi97/awesome-beer). Places are being re-verified; some may have closed since 2022.  
+> (원본 저장소는 2022-10 이후 갱신이 멈췄습니다. 이 포크에서 이어서 관리하며, 2022년 이후 폐업한 곳이 있을 수 있어 다시 확인하는 중입니다.)
+
 This is a repository that organizes a list of craft beer breweries, beer pubs, bottle shops, and other craft beer-related places in Korea.  
 (국내의 맥주 브루어리, 맥주 펍, 바틀샵 등 크래프트 맥주와 관련된 리스트를 정리한 저장소입니다.)
 
@@ -74,7 +77,7 @@ This project is licensed under the [BEER-WARE LICENSE](/LICENSE).
 
  <div align = center >
 
-![Generic badge](https://img.shields.io/badge/updateDate-2022--10--11-green.svg)
+![Generic badge](https://img.shields.io/badge/updateDate-2026--11--11-green.svg)
 
 <a href="http://supportlocal.kr/supportlocal" target="_blank"><img src="./support_local.jpg" width="100px" ></a>
 
