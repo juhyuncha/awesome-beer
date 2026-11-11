@@ -39,20 +39,21 @@
 
 ---
 
-## Build (Optional) (빌드)
+## Build (빌드)
 
-After entering data in CSV, please run the following command:  
-(CSV에 데이터를 입력하면, 아래와 같은 명령어를 입력해주세요.)
+After editing `beer.csv`, run the following with Python 3.9+ (no packages needed):  
+(`beer.csv`를 고친 뒤 Python 3.9 이상으로 아래 명령을 실행해주세요. 따로 설치할 패키지는 없습니다.)
 
 ```bash
-npm run build
-# or run individually:
-# npm run split-csv  # Generates markdown files
-# npm run update-json  # Updates JSON file
+python scripts/validate.py   # Check the CSV format (CSV 형식 검사)
+python scripts/build.py      # Regenerate beer.json and data/*.md (beer.json, data/*.md 재생성)
 ```
 
-Running the above command will split the data by region and update the JSON file.  
-(위 명령어를 입력 하면, 시도별로 데이터를 분할하고 JSON 파일을 업데이트합니다.)
+`beer.json` and `data/*.md` are generated files. Edit only `beer.csv`.  
+(`beer.json`과 `data/*.md`는 생성 파일입니다. `beer.csv`만 고쳐주세요.)
+
+Types must be one of 탭룸, 브루펍, 바틀샵, 기타.  
+(종류는 탭룸, 브루펍, 바틀샵, 기타 중 하나여야 합니다.)
 
 Thank you for contributing.  
 (기여해주셔서 감사합니다.)
