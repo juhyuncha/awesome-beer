@@ -23,3 +23,6 @@
 - **결정:** 폐업한 곳은 `data/*.md`에서 빼고 `beer.json`에는 남긴다. 근거: 사용자 답 "md에서 빼기 (Recommended)"
 - **정정:** `CONTRIBUTING.md` 입력 양식의 열 순서가 실제 CSV 헤더와 달랐다(주소·네이버 URL, 경도·위도 순서). 새 열을 넣으면서 실제 순서로 고쳤다.
 - **결정:** 2단계 변경을 `feature/status-field` 브랜치에 커밋 두 개(필드 추가, 기록)로 나눠 커밋했다. push·PR은 하지 않았다. 근거: 사용자 답 "작업 트리 변경 사항을 적절한 메시지와 함께 커밋하세요."
+- **외부 반영:** `feature/status-field` 브랜치(커밋 67d23aa, 3c6db87)를 origin에 push했다. master는 그대로다. 근거: 사용자 답 "push"(이 줄은 다음 커밋에 함께 올린다)
+- **외부 반영:** 포크 안에서 PR [juhyuncha/awesome-beer#2](https://github.com/juhyuncha/awesome-beer/pull/2)(`feature/status-field` → `master`)를 만들었다. 원본 저장소에는 보내지 않았다. 근거: 사용자 답 "PR 만들기"
+- **외부 반영:** PR #2를 merge commit 방식으로 master에 병합했다(병합 커밋 a1ea667). 근거: 사용자 답 "병합"

@@ -4,7 +4,7 @@
 | # | 단계 | 완료 기준 | 상태 |
 |---|---|---|---|
 | 1 | 포크와 기본 정리 | 포크 생성, mahi97 변경 반영, `validate.py` 오류 0건, Python 빌드가 기존 출력과 같음 | 완료(PR #1로 master 병합) |
-| 2 | 필드 추가 | `status`(영업/폐업/미확인), `last_verified`(YYYY-MM-DD) 추가, 검사·빌드 반영, 기존 223곳은 `미확인` | 완료(`feature/status-field` 브랜치, 커밋·병합 전) |
+| 2 | 필드 추가 | `status`(영업/폐업/미확인), `last_verified`(YYYY-MM-DD) 추가, 검사·빌드 반영, 기존 223곳은 `미확인` | 완료(PR #2로 master 병합) |
 | 3 | 전수 재확인 | 223곳 모두 `last_verified` 기록, 폐업은 `폐업`으로 표시(삭제하지 않음) | 대기 |
 | 4 | 자동 검사 | GitHub Actions에서 PR마다 `validate.py`와 빌드 결과 일치 확인 | 대기 |
 | 5 | 지도 페이지 | GitHub Pages에 Leaflet + OpenStreetMap 지도, 종류·지역 필터 | 대기 |
