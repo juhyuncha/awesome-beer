@@ -22,8 +22,8 @@ SIDO = {
     "세종": {"세종"}, "울산": {"울산"}, "인천": {"인천"}, "전라": {"전북", "전남"},
     "제주": {"제주"}, "충청": {"충북", "충남"},
 }
-# p/entry/place가 현재 네이버 지도 형식. naver.me 단축 URL은 3단계 재확인 때 p 형식으로 바꾼다
-NAVER = re.compile(r"https://map\.naver\.com/(p|v5)/entry/place/\d+|https?://naver\.me/\w+")
+# p/entry/place가 현재 네이버 지도 형식(v5 형식은 2026-11-12에 모두 바꿨다). naver.me 단축 URL은 3단계 재확인 때 p 형식으로 바꾼다
+NAVER = re.compile(r"https://map\.naver\.com/p/entry/place/\d+|https?://naver\.me/\w+")
 
 
 def main():
