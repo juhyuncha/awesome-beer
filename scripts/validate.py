@@ -70,7 +70,8 @@ def main():
         c = Counter(r[key] for r in rows if r[key])
         errs += [f"중복 {key}: {v!r} ({n}건)" for v, n in c.items() if n > 1]
 
-    warn = [f"{i}행 {r['name']!r}: 네이버 지도 URL 없음" for i, r in enumerate(rows, 2) if not r["naverUrl"]]
+    # 폐업한 곳은 지도 URL이 없어도 경고하지 않는다
+    warn = [f"{i}행 {r['name']!r}: 네이버 지도 URL 없음" for i, r in enumerate(rows, 2) if not r["naverUrl"] and r["status"] != "폐업"]
 
     for w in warn:
         print("경고:", w)
