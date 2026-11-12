@@ -22,7 +22,8 @@ SIDO = {
     "세종": {"세종"}, "울산": {"울산"}, "인천": {"인천"}, "전라": {"전북", "전남"},
     "제주": {"제주"}, "충청": {"충북", "충남"},
 }
-NAVER = re.compile(r"https://map\.naver\.com/v5/entry/place/\d+|https?://naver\.me/\w+")
+# p/entry/place가 현재 네이버 지도 형식. naver.me 단축 URL은 3단계 재확인 때 p 형식으로 바꾼다
+NAVER = re.compile(r"https://map\.naver\.com/(p|v5)/entry/place/\d+|https?://naver\.me/\w+")
 
 
 def main():
@@ -76,6 +77,8 @@ def main():
     for e in errs:
         print("오류:", e)
     print(f"{len(rows)}곳 검사, 오류 {len(errs)}건, 경고 {len(warn)}건")
+    done = sum(1 for r in rows if r["last_verified"])
+    print(f"재확인 {done}/{len(rows)}곳 (last_verified 기록 기준)")
     sys.exit(1 if errs else 0)
 
 
