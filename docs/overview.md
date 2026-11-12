@@ -15,7 +15,7 @@
 | address | 도로명주소. 첫 단어는 짧은 시도명(서울, 경북, 전북 등) |
 | beerType | 탭룸 / 브루펍 / 바틀샵 / 기타 |
 | desc | 특징 한 줄 |
-| naverUrl | 네이버 지도 장소 URL. 새로 적을 때는 현재 형식 `https://map.naver.com/p/entry/place/<id>`를 쓴다. 예전 형식 `v5/entry/place/<id>`와 `naver.me` 단축 URL도 검사를 통과한다(단축 URL은 3단계에서 바꾼다) |
+| naverUrl | 네이버 지도 장소 URL. `https://map.naver.com/p/entry/place/<id>` 형식. `naver.me` 단축 URL도 검사를 통과하지만 3단계에서 이 형식으로 바꾼다 |
 | homepage | 홈페이지. 가능하면 인스타그램 |
 | x, y | 경도, 위도 |
 | status | 영업 / 폐업 / 미확인. 폐업한 곳도 지우지 않고 `폐업`으로 둔다(`data/*.md`에서는 빠지고 `beer.json`에는 남는다) |
