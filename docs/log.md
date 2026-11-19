@@ -50,3 +50,13 @@
 - **커밋:** 이 결정 기록(log·plan·overview)을 `claude/beer-archive-d82386` 브랜치에 커밋 하나로 커밋했다. push·master 병합은 하지 않았다. 근거: 사용자 답 "커밋"
 - **결정:** 새 프로젝트 이름은 `korean-brew-map`으로 한다(폴더 `~/work/projects/korean-brew-map`, 저장소·예약 작업도 같은 이름). 근거: 사용자 답 "korean-brew-map"
 - **커밋·외부 반영:** 이름 기록을 커밋하고 `claude/beer-archive-d82386` 브랜치(커밋 ff844fe와 이 커밋)를 origin에 push했다. master 병합은 하지 않았다. 근거: 사용자 답 "커밋 후 필요하다면 푸시까지 해줘."
+- **외부 반영:** 포크 안에서 PR [juhyuncha/awesome-beer#3](https://github.com/juhyuncha/awesome-beer/pull/3)(`claude/beer-archive-d82386` → `master`)을 만들었다. 원본 저장소에는 보내지 않았다. 근거: 사용자 답 "PR 만들기"(이 줄은 다음 커밋에 함께 올린다)
+- **외부 반영:** PR #3을 merge commit 방식으로 master에 병합했다(병합 커밋 a20446c). 근거: 사용자 답 "병합"(이 줄은 다음 커밋에 함께 올린다)
+
+## 2026-11-19
+- **정정:** 새 프로젝트 이름이 `korean-brew-map`에서 KOREAN SOOL TALKER(`korean-sool-talker`, 폴더 `~/work/projects/korean-sool-talker`)로 바뀌었다. 그 뒤 범위·분류도 그쪽에서 다시 정했다(그 저장소 `docs/log.md`가 기준이다). 위 2026-11-16 항목의 이름·분류·"술 기록은 하지 않는다"는 당시 결정으로 남긴다.
+- **결정:** korean-sool-talker가 이 저장소 master `a20446c`의 223곳을 한 번 들여온 뒤 그쪽을 원본으로 삼는다(그쪽 DB 구조 검토에서 사용자 답 "한 번 들여와 이쪽이 원본 (추천)"). 2026-11-16의 "이 저장소는 수제맥주 데이터 원본으로 남는다"를 대체한다.
+- **결정:** 이 저장소는 더 고치지 않는다(멈춤). 3단계는 1/223에서 중단하고 6단계는 korean-sool-talker로 이관, 4·7단계는 취소했다. 저장소가 공개되면 README에 이전 안내를 붙이는 8단계를 추가했다. 근거: 사용자 답 "멈춤으로 정리"
+  - 이유: 포크는 별 1·포크 0·이슈 0이고 PR 3개가 모두 본인 것이라 외부 기여가 없다. 생성물로 유지(역방향 내보내기)는 스크립트와 갱신 비용이 계속 들어 필요해질 때 만든다
+- **커밋·외부 반영:** 이 기록을 `claude/beer-archive-d82386`에 커밋해 origin에 push하고 master로 가는 PR을 만들었다(PR 번호는 다음 줄). 근거: 사용자 답 "커밋·PR"
+  - PR [juhyuncha/awesome-beer#4](https://github.com/juhyuncha/awesome-beer/pull/4)(`claude/beer-archive-d82386` → `master`). 원본 저장소에는 보내지 않았다
