@@ -59,3 +59,4 @@
 - **결정:** 이 저장소는 더 고치지 않는다(멈춤). 3단계는 1/223에서 중단하고 6단계는 korean-sool-talker로 이관, 4·7단계는 취소했다. 저장소가 공개되면 README에 이전 안내를 붙이는 8단계를 추가했다. 근거: 사용자 답 "멈춤으로 정리"
   - 이유: 포크는 별 1·포크 0·이슈 0이고 PR 3개가 모두 본인 것이라 외부 기여가 없다. 생성물로 유지(역방향 내보내기)는 스크립트와 갱신 비용이 계속 들어 필요해질 때 만든다
 - **커밋·외부 반영:** 이 기록을 `claude/beer-archive-d82386`에 커밋해 origin에 push하고 master로 가는 PR을 만들었다(PR 번호는 다음 줄). 근거: 사용자 답 "커밋·PR"
+  - PR [juhyuncha/awesome-beer#4](https://github.com/juhyuncha/awesome-beer/pull/4)(`claude/beer-archive-d82386` → `master`). 원본 저장소에는 보내지 않았다
